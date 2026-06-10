@@ -15,7 +15,7 @@ Thank you for your interest in contributing. This project follows a standard ope
 ## Development setup
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/taskflow-hub.git
+git clone https://github.com/shafaqatullah/taskflow-hub.git
 cd taskflow-hub
 git checkout develop
 flutter pub get
@@ -87,4 +87,4 @@ All participants are expected to follow [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 
 ## Questions
 
-Open a [Discussion](https://github.com/YOUR_USERNAME/taskflow-hub/discussions) or issue labeled `question` if you are unsure where to start.
+Open a [Discussion](https://github.com/shafaqatullah/taskflow-hub/discussions) or issue labeled `question` if you are unsure where to start.

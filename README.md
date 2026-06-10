@@ -2,7 +2,7 @@
 
 A production-style Flutter task manager that demonstrates **clean architecture**, automated CI, and professional open-source GitHub workflows.
 
-[![CI](https://github.com/YOUR_USERNAME/taskflow-hub/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/taskflow-hub/actions/workflows/ci.yml)
+[![CI](https://github.com/shafaqatullah/taskflow-hub/actions/workflows/ci.yml/badge.svg)](https://github.com/shafaqatullah/taskflow-hub/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## Features
@@ -41,7 +41,7 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for layer responsibilities and 
 ### Install and run
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/taskflow-hub.git
+git clone https://github.com/shafaqatullah/taskflow-hub.git
 cd taskflow-hub
 flutter pub get
 flutter run
