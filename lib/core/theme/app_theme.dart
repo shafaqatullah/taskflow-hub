@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 
 abstract final class AppTheme {
-  static ThemeData light() {
-    const seed = Color(0xFF2563EB);
+  static const Color _seed = Color(0xFF2563EB);
+
+  static ThemeData light() => _buildTheme(Brightness.light);
+
+  static ThemeData dark() => _buildTheme(Brightness.dark);
+
+  static ThemeData _buildTheme(Brightness brightness) {
     final colorScheme = ColorScheme.fromSeed(
-      seedColor: seed,
-      brightness: Brightness.light,
+      seedColor: _seed,
+      brightness: brightness,
     );
 
     return ThemeData(

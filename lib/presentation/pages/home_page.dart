@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../domain/entities/task.dart';
 import '../providers/task_provider.dart';
+import '../providers/theme_provider.dart';
 import '../widgets/empty_state.dart';
 import '../widgets/task_list_tile.dart';
 import 'task_form_page.dart';
@@ -63,6 +64,20 @@ class _HomePageState extends State<HomePage> {
           appBar: AppBar(
             title: const Text('TaskFlow Hub'),
             actions: [
+              Consumer<ThemeProvider>(
+                builder: (context, themeProvider, _) {
+                  final icon = switch (themeProvider.themeMode) {
+                    ThemeMode.light => Icons.light_mode,
+                    ThemeMode.dark => Icons.dark_mode,
+                    ThemeMode.system => Icons.brightness_auto,
+                  };
+                  return IconButton(
+                    tooltip: 'Cycle theme (${themeProvider.themeMode.name})',
+                    onPressed: themeProvider.cycleThemeMode,
+                    icon: Icon(icon),
+                  );
+                },
+              ),
               IconButton(
                 tooltip: 'Refresh',
                 onPressed: provider.loadTasks,
@@ -114,8 +129,8 @@ class _HomePageState extends State<HomePage> {
                   child: ListView.separated(
                     padding: const EdgeInsets.all(16),
                     itemCount: tasks.length,
-                        separatorBuilder: (context, index) =>
-                            const SizedBox(height: 8),
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(height: 8),
                     itemBuilder: (context, index) {
                       final task = tasks[index];
                       return TaskListTile(
