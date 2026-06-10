@@ -4,7 +4,7 @@ Step-by-step commands for running TaskFlow Hub as a professional open-source pro
 
 | Placeholder | Example |
 |-------------|---------|
-| `YOUR_USERNAME` | `johndoe` |
+| `YOUR_USERNAME` | `shafaqatullah` |
 | `COLLABORATOR` | `janedoe` |
 | `COLLABORATOR_EMAIL` | `jane@users.noreply.github.com` |
 

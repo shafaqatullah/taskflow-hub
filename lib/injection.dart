@@ -11,6 +11,7 @@ import 'domain/usecases/get_tasks.dart';
 import 'domain/usecases/toggle_task_complete.dart';
 import 'domain/usecases/update_task.dart';
 import 'presentation/providers/task_provider.dart';
+import 'presentation/providers/theme_provider.dart';
 
 Future<List<SingleChildWidget>> buildProviders() async {
   final preferences = await SharedPreferences.getInstance();
@@ -26,6 +27,7 @@ Future<List<SingleChildWidget>> buildProviders() async {
   final toggleTaskComplete = ToggleTaskComplete(repository);
 
   return [
+    ChangeNotifierProvider(create: (_) => ThemeProvider(preferences)),
     ChangeNotifierProvider(
       create: (_) => TaskProvider(
         getTasks: getTasks,

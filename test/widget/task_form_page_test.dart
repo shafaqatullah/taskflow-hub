@@ -9,14 +9,13 @@ import 'package:taskflow_hub/domain/usecases/delete_task.dart';
 import 'package:taskflow_hub/domain/usecases/get_tasks.dart';
 import 'package:taskflow_hub/domain/usecases/toggle_task_complete.dart';
 import 'package:taskflow_hub/domain/usecases/update_task.dart';
-import 'package:taskflow_hub/presentation/pages/home_page.dart';
+import 'package:taskflow_hub/presentation/pages/task_form_page.dart';
 import 'package:taskflow_hub/presentation/providers/task_provider.dart';
-import 'package:taskflow_hub/presentation/providers/theme_provider.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  Future<void> pumpHomePage(WidgetTester tester) async {
+  Future<void> pumpForm(WidgetTester tester) async {
     SharedPreferences.setMockInitialValues({});
     final preferences = await SharedPreferences.getInstance();
     final repository = TaskRepositoryImpl(
@@ -24,31 +23,26 @@ void main() {
     );
 
     await tester.pumpWidget(
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (_) => ThemeProvider(preferences),
-          ),
-          ChangeNotifierProvider(
-            create: (_) => TaskProvider(
-              getTasks: GetTasks(repository),
-              addTask: AddTask(repository),
-              updateTask: UpdateTask(repository),
-              deleteTask: DeleteTask(repository),
-              toggleTaskComplete: ToggleTaskComplete(repository),
-            ),
-          ),
-        ],
-        child: const MaterialApp(home: HomePage()),
+      ChangeNotifierProvider(
+        create: (_) => TaskProvider(
+          getTasks: GetTasks(repository),
+          addTask: AddTask(repository),
+          updateTask: UpdateTask(repository),
+          deleteTask: DeleteTask(repository),
+          toggleTaskComplete: ToggleTaskComplete(repository),
+        ),
+        child: const MaterialApp(home: TaskFormPage()),
       ),
     );
-    await tester.pumpAndSettle();
   }
 
-  testWidgets('shows empty state when no tasks exist', (tester) async {
-    await pumpHomePage(tester);
+  testWidgets('shows inline validation for empty title', (tester) async {
+    await pumpForm(tester);
 
-    expect(find.text('No tasks yet'), findsOneWidget);
-    expect(find.text('New Task'), findsOneWidget);
+    await tester.tap(find.text('Create Task'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Title is required.'), findsOneWidget);
+    expect(find.byType(SnackBar), findsNothing);
   });
 }

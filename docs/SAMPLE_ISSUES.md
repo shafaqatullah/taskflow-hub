@@ -101,7 +101,7 @@ Enable GitHub Dependabot and add a `dependency-review` job on pull requests targ
 
 ## GitHub CLI — create issues in bulk
 
-After pushing the repo, replace `YOUR_USERNAME/taskflow-hub` and run:
+After pushing the repo, run:
 
 ```bash
 gh issue create --title "Add dark mode theme" \
