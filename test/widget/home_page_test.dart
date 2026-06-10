@@ -26,9 +26,7 @@ void main() {
     await tester.pumpWidget(
       MultiProvider(
         providers: [
-          ChangeNotifierProvider(
-            create: (_) => ThemeProvider(preferences),
-          ),
+          ChangeNotifierProvider(create: (_) => ThemeProvider(preferences)),
           ChangeNotifierProvider(
             create: (_) => TaskProvider(
               getTasks: GetTasks(repository),

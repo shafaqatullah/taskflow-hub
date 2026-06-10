@@ -71,6 +71,8 @@ Use the [Feature Request template](.github/ISSUE_TEMPLATE/feature_request.yml). 
 
 ## Co-authored commits
 
+See [docs/COLLABORATOR_GUIDE.md](docs/COLLABORATOR_GUIDE.md) for inviting collaborators and co-author format.
+
 When pair programming or reviewing substantial work, credit collaborators:
 
 ```bash

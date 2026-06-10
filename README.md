@@ -76,14 +76,25 @@ We welcome issues and pull requests. Please read:
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - [docs/WORKFLOW_GUIDE.md](docs/WORKFLOW_GUIDE.md) — full Git/GitHub command reference
 
-## Sample roadmap
+## Live repository
 
-Tracked as GitHub issues (see [docs/SAMPLE_ISSUES.md](docs/SAMPLE_ISSUES.md)):
+**https://github.com/shafaqatullah/taskflow-hub**
 
-1. Dark mode theme support
-2. Task due dates and reminders
-3. Export tasks to JSON
-4. Search and sort improvements
+Branches: `main` (releases) · `develop` (integration) · `feature/*` · `fix/*` · `chore/*`
+
+Completed workflow demo: PRs [#6](https://github.com/shafaqatullah/taskflow-hub/pull/6), [#7](https://github.com/shafaqatullah/taskflow-hub/pull/7), [#8](https://github.com/shafaqatullah/taskflow-hub/pull/8) merged into `develop`; release `v1.1.0` on `main`.
+
+See [docs/PROJECT_COMPLETION.md](docs/PROJECT_COMPLETION.md) for the full checklist.
+
+## Sample roadmap (GitHub issues)
+
+| Issue | Title | Status |
+|-------|-------|--------|
+| [#1](https://github.com/shafaqatullah/taskflow-hub/issues/1) | Dark mode theme | Closed |
+| [#2](https://github.com/shafaqatullah/taskflow-hub/issues/2) | Due dates | Open |
+| [#3](https://github.com/shafaqatullah/taskflow-hub/issues/3) | Export JSON | Open |
+| [#4](https://github.com/shafaqatullah/taskflow-hub/issues/4) | Validation feedback | Closed |
+| [#5](https://github.com/shafaqatullah/taskflow-hub/issues/5) | Dependabot CI | Closed |
 
 ## License
 
