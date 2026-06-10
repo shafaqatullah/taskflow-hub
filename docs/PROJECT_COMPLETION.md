@@ -59,6 +59,9 @@ Repository: **https://github.com/shafaqatullah/taskflow-hub**
 | PR #7 merged (fix) | Done | Validation test |
 | PR #8 merged (feature) | Done | Dark mode |
 | Release v1.1.0 | Done | Tag on `main` |
+| PR #12 develop → main | Done | Docs sync merged |
+| Default branch `develop` | Done | GitHub repo settings |
+| Branch protection | Done | `main` + `develop` require CI + PR |
 | Co-authored commit demo | Done | Commit on `feature/dark-mode` |
 | Collaborator guide | Done | `docs/COLLABORATOR_GUIDE.md` |
 | Git command reference | Done | `docs/WORKFLOW_GUIDE.md` |
